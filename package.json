@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev ./public -p 6006",
     "build-storybook": "storybook build"
   },
   "devDependencies": {
@@ -23,7 +23,10 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
+    "@storybook/addon-styling": "^1.0.8",
     "@vitejs/plugin-vue": "^4.2.3",
+    "bootstrap": "^4.6.0",
+    "sass": "^1.62.1",
     "vue": "^3.2.36"
   }
 }
