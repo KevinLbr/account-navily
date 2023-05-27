@@ -12,6 +12,13 @@ class LoginTest extends TestCase
 	use RefreshDatabase;
 	use UserTools;
 
+	public function test_login_view(): void
+	{
+		$response = $this->get('/login');
+
+		$response->assertStatus(200);
+	}
+
     public function test_login_success(): void
     {
 		auth()->logout();
