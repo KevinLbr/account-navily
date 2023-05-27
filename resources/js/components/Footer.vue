@@ -1,5 +1,5 @@
 <template>
-	<footer class="mt-6 text-white background-radar">
+	<footer class="text-white background-radar">
 		<div class="container py-5">
 			<div class="row">
 				<div class="mb-4 col-12 mobile-stores">
