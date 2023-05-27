@@ -1,5 +1,7 @@
 @extends('layouts.template')
 
 @section('content')
-    LOGIN
+    <div>
+        LOGIN
+    </div>
 @endsection

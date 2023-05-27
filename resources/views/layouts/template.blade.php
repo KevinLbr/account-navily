@@ -23,7 +23,9 @@
         <div id="app">
             <header-component></header-component>
 
-            @yield('content')
+            <div class="breadcrumb-container">
+                @yield('content')
+            </div>
 
             <footer-component></footer-component>
         </div>
