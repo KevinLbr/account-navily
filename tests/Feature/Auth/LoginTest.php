@@ -13,18 +13,20 @@ class LoginTest extends TestCase
 
     public function test_login_success(): void
     {
+		// force logout
+		auth()->logout();
+
 		$password = "password";
 		$user = User::factory()->create(['password' => $password]);
 
 		$credentials = [
 			'email' => $user->email,
-			'password' => $user->password,
+			'password' => $password,
 		];
 
-		$response = $this->post(route('login'), $credentials);
+		$response = $this->post('/login', $credentials);
 
-//		$this->assertTrue(auth()->check());
-		$this->assertAuthenticated();
+		$this->assertTrue(auth()->check());
 		$response->assertRedirect(RouteServiceProvider::HOME);
     }
 }
