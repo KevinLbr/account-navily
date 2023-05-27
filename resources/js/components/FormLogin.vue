@@ -4,7 +4,7 @@
 			Connexion
 		</h1>
 
-		<div class="form-group">
+		<div class="form-group pt-5">
 			<label for="email" class="text-secondary-color">
 				E-mail
 			</label>
@@ -20,7 +20,7 @@
 			<input type="password" class="input-navily" v-model="password">
 		</div>
 
-		<div class="text-center">
+		<div class="text-center pt-4">
 			<button class="btn btn-plainsailing" @click="login()">
 				Connexion
 			</button>
