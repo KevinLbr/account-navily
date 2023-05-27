@@ -23,7 +23,7 @@
         <div id="app">
             <header-component></header-component>
 
-            <div style="margin-top: 65px">
+            <div style="margin-top: 80px">
                 @yield('content')
             </div>
 

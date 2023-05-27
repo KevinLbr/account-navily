@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-login">
-        <div class="text-center pb-5">
+        <div class="text-center py-5">
             <img src="/images/logo/logo-primary.svg" alt="Logo" class="pt-5 d-inline">
         </div>
 

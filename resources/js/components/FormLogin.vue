@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-white p-4" style="border-radius: 15px;box-shadow: 0px 0px 10px #081a3342;">
+	<div class="bg-white p-5" style="border-radius: 15px;box-shadow: 0px 0px 10px #081a3342;">
 		<h1 class="text-xl-plus text-weight-700 text-center text-main-deep-color">
 			Connexion
 		</h1>
