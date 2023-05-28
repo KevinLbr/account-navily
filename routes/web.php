@@ -10,7 +10,7 @@ Route::middleware('guest')
 
 Route::middleware('auth')
 	->get('/account', [AccountController::class, 'getInformationsAccountView'])
-	->name('account');
+	->name('account.informations');
 
 // TMP
 Route::middleware('auth')
