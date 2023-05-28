@@ -3,7 +3,6 @@
 namespace Tests\Feature\Account;
 
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use Tests\Tools\UserTools;
@@ -19,7 +18,7 @@ class AccountInformationTest extends TestCase
 
 		auth()->login($user);
 
-		$response = $this->get('/account');
+		$response = $this->get(route('account.informations'));
 
 		$response->assertStatus(200);
 	}
@@ -28,7 +27,7 @@ class AccountInformationTest extends TestCase
 	{
 		auth()->logout();
 
-		$response = $this->get('/account');
+		$response = $this->get(route('account.informations'));
 
 		$response->assertStatus(302);
 		$response->assertRedirect(route('login'));
