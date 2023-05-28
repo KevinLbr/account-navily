@@ -1,0 +1,32 @@
+.list-account
+{
+    .list-group-item:not(.active){
+        background-color: #F5F5F5;
+        font-weight: bold;
+
+        a{
+            color : #081A33;
+        }
+
+        i{
+            color : #D6A95C;
+        }
+
+        &:hover{
+            font-weight: bold;
+            background-color: #081A33;
+            border-color: #081A33;
+            color : white !important;
+            i{
+                color : white;
+            }
+        }
+    }
+
+    .list-group-item.active{
+        font-weight: bold;
+        background-color: #081A33;
+        border-color: #081A33;
+        color : white !important;
+    }
+}
