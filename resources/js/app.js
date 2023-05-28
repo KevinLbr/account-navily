@@ -2,9 +2,10 @@ import './bootstrap';
 
 import {createApp} from "vue/dist/vue.esm-bundler";
 
-import Header from "./components/Header.vue"
-import Footer from "./components/Footer.vue"
-import FormLogin from "./components/FormLogin.vue"
+import Header from "./components/Layouts/Header.vue"
+import Footer from "./components/Layouts/Footer.vue"
+
+import FormLogin from "./components/Auth/FormLogin.vue"
 
 import 'bootstrap'
 

@@ -156,6 +156,12 @@ export default {
 					text: 'Blog',
 					title: 'Blog',
 					target: '_blank'
+				},
+
+				{
+					url: 'http://localhost:8080/account',
+					text: 'Mon compte',
+					title: 'Mon compte',
 				}
 			],
 		}
