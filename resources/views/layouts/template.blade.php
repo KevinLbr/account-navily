@@ -18,6 +18,8 @@
         </style>
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
         <link rel="stylesheet" href="https://www.navily.com/css/app.css?id=f68cbf0ccbe12191040d">
+        <script src="https://kit.fontawesome.com/d21f46164a.js" crossorigin="anonymous"></script>
+
     </head>
     <body class="antialiased">
         <div id="app">
