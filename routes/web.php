@@ -9,8 +9,12 @@ Route::middleware('guest')
 	->name('login');
 
 Route::middleware('auth')
-	->get('/account', [AccountController::class, 'getInformationsAccountView'])
+	->get('/account/informations', [AccountController::class, 'getInformationsAccountView'])
 	->name('account.informations');
+
+Route::middleware('auth')
+	->get('/account/skipper', [AccountController::class, 'getSkipperAccountView'])
+	->name('account.skipper');
 
 // TMP
 Route::middleware('auth')

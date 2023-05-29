@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Browser;
+namespace Tests\Browser\Auth;
 
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -25,7 +25,7 @@ class LoginTest extends DuskTestCase
 				->type('#email', $user->email)
 				->type('#password', $password)
 				->click('#dusk-login-btn')
-				->waitForLocation('/account')
+				->waitForLocation('/account/informations')
 				->assertPathIs(RouteServiceProvider::HOME)
 				->assertAuthenticated()
 				->logout();

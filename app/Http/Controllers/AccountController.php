@@ -10,4 +10,9 @@ class AccountController extends Controller
 	{
 		return view('account.informations');
 	}
+
+	public function getSkipperAccountView(): View
+	{
+		return view('account.skipper');
+	}
 }

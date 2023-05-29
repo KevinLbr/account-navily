@@ -74,7 +74,7 @@ export default {
 			axios.post('/login', credentials)
 				 .then(() => {
 					 self.hasErrors = false;
-					window.location = '/account';
+					window.location = '/account/informations';
 				})
 				.catch((r) => {
 					self.hasErrors = true;

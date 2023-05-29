@@ -13,7 +13,9 @@
                 </h1>
                 
                 <div class="d-flex justify-content-center">
-                    <img src="/images/user/kevin-linkedin.jpeg" alt="Kevin Labre" class="rounded-full">
+                    <img src="{{ public_path('/images/user/kevin-linkedin.jpeg') }}'"
+                         alt="Kevin Labre"
+                         class="rounded-full">
                 </div>
 
                 <div class="text-center pb-5">
