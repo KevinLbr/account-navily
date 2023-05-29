@@ -7,7 +7,6 @@ Route::middleware('guest')
 	->get('/login', [LoginController::class, 'getLoginView'])
 	->name('login');
 
-// TMP
 Route::middleware('auth')
 	->get('/logout', function()
 	{
