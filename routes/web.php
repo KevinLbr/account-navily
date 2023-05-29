@@ -8,6 +8,10 @@ Route::middleware('guest')
 	->get('/login', [LoginController::class, 'getLoginView'])
 	->name('login');
 
+Route::get('/account', function(){
+	return redirect(route('account.informations'));
+});
+
 Route::middleware('auth')
 	->get('/account/informations', [AccountController::class, 'getInformationsAccountView'])
 	->name('account.informations');
@@ -21,6 +25,6 @@ Route::middleware('auth')
 	->get('/logout', function()
 	{
 		auth()->logout();
-		redirect(route('login'));
+		return redirect(route('login'));
 	})
 	->name('logout');
