@@ -12,7 +12,7 @@ class LoginTest extends DuskTestCase
 {
 	use DatabaseMigrations;
 
-    public function test_login_form(): void
+    public function test_login_form_success(): void
     {
 		$password = 'password';
 		$user = User::factory()->create([
@@ -27,12 +27,28 @@ class LoginTest extends DuskTestCase
 				->click('#dusk-login-btn')
 				->waitForLocation('/account')
 				->assertPathIs(RouteServiceProvider::HOME)
-				->screenshot('test_login_form');
+				->assertAuthenticated()
+				->logout();
 		});
     }
 
 	public function test_login_form_with_bad_credentials(): void
 	{
-//		TODO
+		$password = 'password';
+		$bad_password = 'bad_password';
+		$user = User::factory()->create([
+			'email' => 'test2@test.com',
+			'password' => $password
+		]);
+
+		$this->browse(function (Browser $browser) use ($user, $bad_password) {
+			$browser->visit(route('login'))
+				->waitForLocation('/login')
+				->type('#email', $user->email)
+				->type('#password', $bad_password)
+				->click('#dusk-login-btn')
+				->assertPathIsNot(RouteServiceProvider::HOME)
+				->assertGuest();
+		});
 	}
 }

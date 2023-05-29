@@ -6,11 +6,21 @@ use Illuminate\Support\Collection;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
+use Laravel\Dusk\Browser;
 use Laravel\Dusk\TestCase as BaseTestCase;
 
 abstract class DuskTestCase extends BaseTestCase
 {
     use CreatesApplication;
+
+	public function tearDown(): void
+	{
+		$this->browse(function (Browser $browser) {
+			$browser->driver->manage()->deleteAllCookies();
+		});
+
+		parent::tearDown();
+	}
 
     /**
      * Prepare for Dusk test execution.
