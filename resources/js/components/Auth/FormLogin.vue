@@ -16,19 +16,31 @@
 					E-mail
 				</label>
 
-				<input type="email" :class="['input-navily form-control', {'is-invalid' : hasErrors}]" v-model="email">
+				<input
+					type="email"
+					id="email"
+					name="email"
+					:class="['input-navily form-control', {'is-invalid' : hasErrors}]"
+					v-model="email"
+				>
 			</div>
 
 			<div class="form-group">
-				<label for="email" class="text-secondary-color">
+				<label for="password" class="text-secondary-color">
 					Mot de passe
 				</label>
 
-				<input type="password" :class="['input-navily form-control', {'is-invalid' : hasErrors}]" v-model="password">
+				<input
+					type="password"
+					name="password"
+					id="password"
+					:class="['input-navily form-control', {'is-invalid' : hasErrors}]"
+					v-model="password"
+				>
 			</div>
 
 			<div class="text-center pt-4">
-				<button type="submit" class="btn btn-plainsailing">
+				<button type="submit" class="btn btn-plainsailing" id="dusk-login-btn">
 					Connexion
 				</button>
 			</div>
