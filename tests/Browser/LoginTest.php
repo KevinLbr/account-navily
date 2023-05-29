@@ -4,25 +4,21 @@ namespace Tests\Browser;
 
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Testing\DatabaseTruncation;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
 class LoginTest extends DuskTestCase
 {
-//	use DatabaseTruncation;
-//	use RefreshDatabase;
+	use DatabaseMigrations;
 
     public function test_login_form(): void
     {
 		$password = 'password';
 		$user = User::factory()->create([
-			'email' => 'testhgf@test.com',
+			'email' => 'test@test.com',
 			'password' => $password
 		]);
-
-//		TODO fix bug with RefreshDatabase
 
 		$this->browse(function (Browser $browser) use ($user, $password) {
 			$browser->visit(route('login'))
