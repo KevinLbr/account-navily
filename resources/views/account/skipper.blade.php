@@ -13,7 +13,7 @@
                 </h1>
                 
                 <div class="d-flex justify-content-center">
-                    <img src="{{ public_path('/images/user/kevin-linkedin.jpeg') }}'"
+                    <img src="{{ url('/images/user/kevin-linkedin.jpeg') }}"
                          alt="Kevin Labre"
                          class="rounded-full">
                 </div>
