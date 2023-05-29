@@ -6,7 +6,7 @@
 					<div class="wrapper-logo d-flex justify-content-between">
 						<a href="/">
 							<img
-								src="/public/images/logo/logo-primary.svg"
+								src="/images/logo/logo-primary.svg"
 								loading="lazy"
 								alt="Logo Navily"
 								class="logo-blue w-100"
