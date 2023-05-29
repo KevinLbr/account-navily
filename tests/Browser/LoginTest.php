@@ -18,7 +18,7 @@ class LoginTest extends DuskTestCase
     {
 		$password = 'password';
 		$user = User::factory()->create([
-			'email' => 'test@test.com',
+			'email' => 'testhgf@test.com',
 			'password' => $password
 		]);
 
@@ -26,11 +26,8 @@ class LoginTest extends DuskTestCase
 
 		$this->browse(function (Browser $browser) use ($user, $password) {
 			$browser->visit(route('login'))
-				->waitFor('#email')
 				->type('#email', $user->email)
-				->waitFor('#password')
 				->type('#password', $password)
-				->waitFor('#dusk-login-btn')
 				->click('#dusk-login-btn')
 				->waitForLocation('/account')
 				->assertPathIs(RouteServiceProvider::HOME)
