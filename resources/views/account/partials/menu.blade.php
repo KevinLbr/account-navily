@@ -1,11 +1,15 @@
 <ul class="list-group list-account ">
-    <a class="list-group-item active" href="{{ route('account.informations') }}">
+    <a href="{{ route('account.informations') }}"
+       class="list-group-item {{ url()->current() == route('account.informations') ? 'active' : '' }}"
+    >
         <i class="fa-solid fa-info" style="width: 40px"></i>
 
         Informations
     </a>
 
-    <a href="" class="list-group-item">
+    <a href="{{ route('account.skipper') }}"
+       class="list-group-item {{ url()->current() == route('account.skipper') ? 'active' : '' }}"
+    >
         <i class="fa-solid fa-person" style="width: 40px"></i>
 
         Skipper
