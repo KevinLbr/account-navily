@@ -84,7 +84,7 @@
                             </label>
 
                             <input
-                                type="text"
+                                type="date"
                                 id="birthdate"
                                 name="birthdate"
                                 class="input-navily form-control"
