@@ -87,7 +87,9 @@
         A propos de Navily
     </a>
 
-    <a href="" class="list-group-item">
+    <a href="{{ route('logout') }}"
+       class="list-group-item"
+    >
         <i class="fa-solid fa-user-slash" style="width: 40px"></i>
 
         Deconnexion
