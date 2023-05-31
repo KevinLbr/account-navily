@@ -29,5 +29,21 @@ class AccountSkipperPhoneTest extends TestCase
 		$this->assertEquals($user_refreshed->phone, $new_phone);
 	}
 
-	//	TODO Add test with invalid phone
+	public function test_update_phone_invalid_format(): void
+	{
+		$user = User::factory()->create(['phone' => '+33 (0)7 99 99 99 99']);
+
+		auth()->login($user);
+
+		$new_phone = 'bad phone format';
+		$params = [
+			'phone' => $new_phone
+		];
+
+		$response = $this->post(route('account.skipper'), $params);
+		$response->assertInvalid(['phone']);
+
+		$user_refreshed = User::find($user->id);
+		$this->assertNotEquals($user_refreshed->phone, $new_phone);
+	}
 }

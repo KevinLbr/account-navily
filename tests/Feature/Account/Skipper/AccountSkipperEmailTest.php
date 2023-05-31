@@ -29,5 +29,21 @@ class AccountSkipperEmailTest extends TestCase
 		$this->assertEquals($user_refreshed->email, $new_email);
 	}
 
-//	TODO add test with email not valid
+	public function test_update_email_not_valid(): void
+	{
+		$user = User::factory()->create(['email' => 'original@email.com']);
+
+		auth()->login($user);
+
+		$new_email = 'updated_not_valid_email';
+		$params = [
+			'email' => $new_email
+		];
+
+		$response = $this->post(route('account.skipper'), $params);
+		$response->assertInvalid(['email']);
+
+		$user_refreshed = User::find($user->id);
+		$this->assertNotEquals($user_refreshed->email, $new_email);
+	}
 }
