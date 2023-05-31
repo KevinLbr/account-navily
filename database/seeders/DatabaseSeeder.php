@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,9 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
          User::factory()->create([
-             'name' => 'Test User',
              'email' => 'kevin@navily.com',
              'password' => 'password',
+			 'first_name' => 'Kevin',
+			 'last_name' => 'Labre',
+			 'image' => 'data:image/png;base64,' . base64_encode(file_get_contents(__DIR__ . '/images/users/kevin-linkedin.jpeg'))
          ]);
     }
 }
