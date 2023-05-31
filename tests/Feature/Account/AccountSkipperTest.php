@@ -32,4 +32,21 @@ class AccountSkipperTest extends TestCase
 		$response->assertStatus(302);
 		$response->assertRedirect(route('login'));
 	}
+
+	public function test_update_last_name()
+	{
+		$user = User::factory()->create(['last_name' => 'original last name']);
+
+		auth()->login($user);
+
+		$new_last_name = 'updated last name';
+		$params = [
+			'last_name' => $new_last_name
+		];
+
+		$this->post(route('account.skipper'), $params);
+
+		$user_refreshed = User::find($user->id);
+		$this->assertEquals($user_refreshed->last_name, $new_last_name);
+	}
 }

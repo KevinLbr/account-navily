@@ -19,3 +19,7 @@ Route::middleware('auth')
 Route::middleware('auth')
 	->get('/account/skipper', [AccountController::class, 'getSkipperAccountView'])
 	->name('account.skipper');
+
+Route::middleware('auth')
+	->post('/account/skipper', [AccountController::class, 'updateSkipper'])
+	->name('account.skipper');

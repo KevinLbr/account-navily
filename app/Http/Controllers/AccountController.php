@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateSkipperRequest;
+use App\Models\User;
 use Illuminate\View\View;
 
 class AccountController extends Controller
@@ -16,5 +18,10 @@ class AccountController extends Controller
 	{
 		return view('account.skipper')
 			->with('user', auth()->user());
+	}
+
+	public function updateSkipper(UpdateSkipperRequest $request)
+	{
+		auth()->user()->update($request->all());
 	}
 }
