@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="text-center pb-5 pt-4">
-                    <a class="text-main-light-color ">
+                    <a class="text-main-light-color" style="cursor: pointer">
                         Changer la photo de profil
                     </a>
                 </div>

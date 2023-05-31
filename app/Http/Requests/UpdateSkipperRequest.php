@@ -13,7 +13,7 @@ class UpdateSkipperRequest extends FormRequest
 
     public function rules(): array
     {
-        return [
+        $rules = [
             'last_name' => [
 				'nullable',
 				'max:255'
@@ -22,12 +22,6 @@ class UpdateSkipperRequest extends FormRequest
 			'first_name' => [
 				'nullable',
 				'max:255'
-			],
-
-			'email' => [
-				'required',
-				'max:255',
-				'email'
 			],
 
 			'phone' => [
@@ -46,5 +40,16 @@ class UpdateSkipperRequest extends FormRequest
 
 //			'image',
         ];
+
+		if(request()->has('email'))
+		{
+			$rules['email'] = [
+				'required',
+				'max:255',
+				'email'
+			];
+		}
+
+		return $rules;
     }
 }
