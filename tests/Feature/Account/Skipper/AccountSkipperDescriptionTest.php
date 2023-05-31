@@ -28,6 +28,4 @@ class AccountSkipperDescriptionTest extends TestCase
 		$user_refreshed = User::find($user->id);
 		$this->assertEquals($user_refreshed->description, $new_description);
 	}
-
-	//	TODO add test with null description
 }
