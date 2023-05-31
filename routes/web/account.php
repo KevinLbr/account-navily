@@ -3,6 +3,11 @@
 use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function(){
+	// if not login, it's redirect to login
+	return redirect(route('account.informations'));
+});
+
 Route::get('/account', function(){
 	return redirect(route('account.informations'));
 });
