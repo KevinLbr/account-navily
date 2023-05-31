@@ -14,7 +14,7 @@
                 
                 <div class="d-flex justify-content-center">
                     <img src="{{ $user->image_or_default }}"
-                         alt="Kevin Labre"
+                         alt="Avatar de {{ $user->fullname }}"
                          class="rounded-full"
                          width="100"
                     >
