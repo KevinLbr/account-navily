@@ -17,6 +17,11 @@ class UpdateSkipperRequest extends FormRequest
             'last_name' => [
 				'nullable',
 				'max:255'
+			],
+
+			'first_name' => [
+				'nullable',
+				'max:255'
 			]
         ];
     }
