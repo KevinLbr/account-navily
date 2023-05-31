@@ -24,7 +24,7 @@ class LoginTest extends DuskTestCase
 			$browser->visit(route('login'))
 				->type('#email', $user->email)
 				->type('#password', $password)
-				->click('#dusk-login-btn')
+				->click('@login-btn')
 				->waitForLocation('/account/informations')
 				->assertPathIs(RouteServiceProvider::HOME)
 				->assertAuthenticated()
@@ -46,7 +46,7 @@ class LoginTest extends DuskTestCase
 				->waitForLocation('/login')
 				->type('#email', $user->email)
 				->type('#password', $bad_password)
-				->click('#dusk-login-btn')
+				->click('@login-btn')
 				->assertPathIsNot(RouteServiceProvider::HOME)
 				->assertGuest();
 		});

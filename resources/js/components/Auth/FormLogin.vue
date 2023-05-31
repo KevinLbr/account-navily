@@ -40,7 +40,7 @@
 			</div>
 
 			<div class="text-center pt-4">
-				<button type="submit" class="btn btn-plainsailing" id="dusk-login-btn">
+				<button type="submit" class="btn btn-plainsailing" dusk="login-btn">
 					Connexion
 				</button>
 			</div>
