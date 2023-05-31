@@ -14,6 +14,7 @@ class AccountController extends Controller
 
 	public function getSkipperAccountView(): View
 	{
-		return view('account.skipper');
+		return view('account.skipper')
+			->with('user', auth()->user());
 	}
 }

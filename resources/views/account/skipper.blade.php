@@ -36,6 +36,7 @@
                                 id="lastname"
                                 name="lastname"
                                 class="input-navily form-control"
+                                value="{{ $user->last_name }}"
                             >
                         </div>
 
@@ -46,9 +47,10 @@
 
                             <input
                                 type="text"
-                                id="fistname"
-                                name="fistname"
+                                id="firstname"
+                                name="firstname"
                                 class="input-navily form-control"
+                                value="{{ $user->first_name }}"
                             >
                         </div>
 
@@ -62,6 +64,7 @@
                                 id="email"
                                 name="email"
                                 class="input-navily form-control"
+                                value="{{ $user->email }}"
                             >
                         </div>
 
@@ -75,6 +78,7 @@
                                 id="phone"
                                 name="phone"
                                 class="input-navily form-control"
+                                value="{{ $user->phone }}"
                             >
                         </div>
 
@@ -88,6 +92,7 @@
                                 id="birthdate"
                                 name="birthdate"
                                 class="input-navily form-control"
+                                value="{{ $user->bith_date }}"
                             >
                         </div>
 
@@ -100,7 +105,7 @@
                                 id="description"
                                 name="description"
                                 class="input-navily form-control"
-                            ></textarea>
+                            >{{ $user->description }}</textarea>
                         </div>
 
                         <div class="text-center pt-4">
