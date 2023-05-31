@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')
@@ -8,9 +9,5 @@ Route::middleware('guest')
 	->name('login');
 
 Route::middleware('auth')
-	->get('/logout', function()
-	{
-		auth()->logout();
-		return redirect(route('login'));
-	})
+	->get('/logout', [LogoutController::class, 'logout'])
 	->name('logout');
