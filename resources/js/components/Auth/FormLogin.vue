@@ -51,7 +51,12 @@
 <script>
 
 export default {
-	props: {},
+	props: {
+		route_redirect_logged : {
+			type : String,
+			required : true
+		}
+	},
 
 	data()
 	{
@@ -74,7 +79,7 @@ export default {
 			axios.post('/login', credentials)
 				 .then(() => {
 					 self.hasErrors = false;
-					window.location = '/account/informations';
+					window.location = self.route_redirect_logged;
 				})
 				.catch((r) => {
 					self.hasErrors = true;

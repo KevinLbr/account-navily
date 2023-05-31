@@ -8,7 +8,10 @@
 
         <div class="row justify-content-center">
             <div class="col-4">
-                <form-login></form-login>
+                <form-login
+                        route_redirect_logged="{{ route('account.informations') }}"
+                >
+                </form-login>
             </div>
         </div>
     </div>
