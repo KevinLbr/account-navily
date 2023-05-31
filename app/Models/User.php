@@ -90,8 +90,10 @@ class User extends Authenticatable
 		return $progression;
 	}
 
-	public function getDefaultImageAttribute(): string
+	public function getImageOrDefaultAttribute(): string
 	{
-		return 'data:image/png;base64,' . base64_encode(file_get_contents(public_path('/images/logo/logo-primary.svg')));
+		return $this->image != null
+			? $this->image
+			: 'data:image/png;base64,' . base64_encode(file_get_contents(Storage::disk('public')->path('/images/users/default_image.png')));
 	}
 }

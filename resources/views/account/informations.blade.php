@@ -13,9 +13,11 @@
                 </h1>
                 
                 <div class="d-flex justify-content-center">
-                    <img src="{{ $user->image }}"
+                    <img src="{{ $user->image_or_default }}"
                          alt="Kevin Labre"
-                         class="rounded-full">
+                         class="rounded-full"
+                        width="100"
+                    >
                 </div>
 
                 <div class="text-center pb-5">
