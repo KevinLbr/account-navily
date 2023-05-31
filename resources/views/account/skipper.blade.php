@@ -28,16 +28,18 @@
 
                 <div class="row">
                     <div class="col-12 col-sm-6 offset-sm-3">
-                        <form action="">
+                        <form action="{{ route('account.skipper') }}" method="POST">
+                            @csrf
+
                             <div class="form-group pt-2">
-                                <label for="lastname" class="text-secondary-color">
+                                <label for="last_name" class="text-secondary-color">
                                     Nom
                                 </label>
 
                                 <input
                                         type="text"
-                                        id="lastname"
-                                        name="lastname"
+                                        id="last_name"
+                                        name="last_name"
                                         class="input-navily form-control"
                                         value="{{ $user->last_name }}"
                                 >
@@ -50,8 +52,8 @@
 
                                 <input
                                         type="text"
-                                        id="firstname"
-                                        name="firstname"
+                                        id="first_name"
+                                        name="first_name"
                                         class="input-navily form-control"
                                         value="{{ $user->first_name }}"
                                 >
