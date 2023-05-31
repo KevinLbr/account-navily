@@ -48,6 +48,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+		'birth_date' => 'datetime'
     ];
 
 	public function getFullNameAttribute(): string
@@ -101,6 +102,13 @@ class User extends Authenticatable
 	{
 		$this->attributes['image'] = $value != null
 			? 'data:image/png;base64,' . base64_encode(file_get_contents($value))
+			: null;
+	}
+
+	public function getDisplayBirthDateAttribute(): ?string
+	{
+		return $this->birth_date != null
+			? $this->birth_date->format('Y-m-d')
 			: null;
 	}
 }

@@ -132,7 +132,7 @@
                                     id="birth_date"
                                     name="birth_date"
                                     class="input-navily form-control @error('birth_date') is-invalid @enderror"
-                                    value="{{ old('birth_date', $user->birth_date) }}"
+                                    value="{{ old('birth_date', $user->display_birth_date) }}"
                                 >
 
                                 @error('birthdate')
