@@ -36,14 +36,14 @@
                     </p>
                 </div>
 
-                <div class="deep-blue-card md-rounded p-5" style="cursor: pointer">
+                <div class="deep-blue-card md-rounded p-5" style="cursor: pointer;">
                     <div class="row">
                         <div class="col-6">
-                            <img src="/images/logo/logo-premium.svg" alt="Navily premium" class="w-100">
+                            <img src="/images/logo/logo-premium.svg" alt="Navily premium" class="w-100" style="max-width:300px">
                         </div>
 
                         <div class="col-6 d-flex justify-content-end align-items-center">
-                            <i class="fa-solid fa-arrow-right text-white" style="font-size: 50px"></i>
+                            <i class="fa-solid fa-arrow-right text-white" style="font-size: 40px"></i>
                         </div>
                     </div>
                 </div>
