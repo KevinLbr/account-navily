@@ -1,19 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Account;
 
+use App\Http\Controllers\Controller;
 use App\Http\Managers\SkipperManager;
 use App\Http\Requests\UpdateSkipperRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
-class AccountController extends Controller
+class AccountSkipperController extends Controller
 {
-    public function getInformationsAccountView(): View
-	{
-		return view('account.informations')
-			->with('user', auth()->user());
-	}
 
 	public function getSkipperAccountView(): View
 	{

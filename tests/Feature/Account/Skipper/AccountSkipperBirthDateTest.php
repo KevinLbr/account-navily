@@ -14,11 +14,11 @@ class AccountSkipperBirthDateTest extends TestCase
 
 	public function test_update_birth_date(): void
 	{
-		$user = User::factory()->create(['birth_date' => '1999-09-10']);
+		$user = User::factory()->create(['birth_date' => new \DateTime('1999-09-10')]);
 
 		auth()->login($user);
 
-		$new_birth_date = '1999-12-12';
+		$new_birth_date = (new \DateTime('1999-12-12'))->format('Y-m-d');
 		$params = [
 			'birth_date' => $new_birth_date
 		];
@@ -26,7 +26,7 @@ class AccountSkipperBirthDateTest extends TestCase
 		$this->post(route('account.skipper'), $params);
 
 		$user_refreshed = User::find($user->id);
-		$this->assertEquals($user_refreshed->birth_date, $new_birth_date);
+		$this->assertEquals($user_refreshed->display_birth_date, $new_birth_date);
 	}
 
 //	TODO add test with date after 100 years and before 13 years
