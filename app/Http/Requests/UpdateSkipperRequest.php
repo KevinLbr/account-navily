@@ -38,7 +38,10 @@ class UpdateSkipperRequest extends FormRequest
 				'before:13 years ago'
 			],
 
-//			'image',
+			'image' => [
+				'nullable',
+				'file'
+			]
         ];
 
 		if(request()->has('email'))
