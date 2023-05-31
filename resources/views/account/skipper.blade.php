@@ -9,7 +9,7 @@
 
             <div class="col-9">
                 @if(session()->has('success'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success" dusk="success-alert">
                         <span class="text-success">
                             Vos informations ont été mises a jour
                         </span>
