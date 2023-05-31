@@ -14,7 +14,7 @@ class LoginTest extends TestCase
 
 	public function test_login_view(): void
 	{
-		$response = $this->get('/login');
+		$response = $this->get(route('login'));
 
 		$response->assertStatus(200);
 	}
@@ -23,7 +23,7 @@ class LoginTest extends TestCase
     {
 		auth()->logout();
 
-		$response = $this->post('/login', $this->createUserAndGetCredentials());
+		$response = $this->post(route('login'), $this->createUserAndGetCredentials());
 
 		$this->assertTrue(auth()->check());
 		$response->assertRedirect(RouteServiceProvider::HOME);
@@ -37,7 +37,7 @@ class LoginTest extends TestCase
 		$credentials = $this->createUserAndGetCredentials();
 		$credentials['password'] = "bad_password";
 
-		$response = $this->post('/login', $credentials);
+		$response = $this->post(route('login'), $credentials);
 
 		$this->assertFalse(auth()->check());
 		$response->assertStatus(302);
