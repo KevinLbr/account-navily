@@ -25,7 +25,7 @@ class LoginTest extends TestCase
 
 		$response = $this->post(route('login'), $this->createUserAndGetCredentials());
 
-		$this->assertTrue(auth()->check());
+		$this->assertAuthenticated();
 		$response->assertRedirect(RouteServiceProvider::HOME);
 		$response->assertStatus(302);
     }
@@ -39,7 +39,7 @@ class LoginTest extends TestCase
 
 		$response = $this->post(route('login'), $credentials);
 
-		$this->assertFalse(auth()->check());
+		$this->assertGuest();
 		$response->assertStatus(302);
 	}
 }
