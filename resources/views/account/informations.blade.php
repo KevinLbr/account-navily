@@ -16,7 +16,7 @@
                     <img src="{{ $user->image_or_default }}"
                          alt="Kevin Labre"
                          class="rounded-full"
-                        width="100"
+                         width="100"
                     >
                 </div>
 
