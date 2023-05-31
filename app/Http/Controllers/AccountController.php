@@ -25,6 +25,7 @@ class AccountController extends Controller
 	{
 		SkipperManager::update($request);
 
-		return redirect(route('account.skipper'));
+		return redirect(route('account.skipper'))
+			->with('success', true);
 	}
 }

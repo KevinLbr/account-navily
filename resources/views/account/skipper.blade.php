@@ -8,6 +8,14 @@
             </div>
 
             <div class="col-9">
+                @if(session()->has('success'))
+                    <div class="alert alert-success">
+                        <span class="text-success">
+                            Vos informations ont été mises a jour
+                        </span>
+                    </div>
+                @endif
+
                 <h1 class="text-xl-plus text-weight-700 text-center text-main-deep-color pb-3">
                     Skipper
                 </h1>
@@ -37,26 +45,38 @@
                                 </label>
 
                                 <input
-                                        type="text"
-                                        id="last_name"
-                                        name="last_name"
-                                        class="input-navily form-control"
-                                        value="{{ $user->last_name }}"
+                                    type="text"
+                                    id="last_name"
+                                    name="last_name"
+                                    class="input-navily form-control @error('last_name') is-invalid @enderror"
+                                    value="{{ old('last_name', $user->last_name) }}"
                                 >
+
+                                @error('last_name')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <div class="form-group pt-2">
-                                <label for="fistname" class="text-secondary-color">
+                                <label for="first_name" class="text-secondary-color">
                                     Prenom
                                 </label>
 
                                 <input
-                                        type="text"
-                                        id="first_name"
-                                        name="first_name"
-                                        class="input-navily form-control"
-                                        value="{{ $user->first_name }}"
+                                    type="text"
+                                    id="first_name"
+                                    name="first_name"
+                                    class="input-navily form-control"
+                                    value="{{ old('first_name', $user->first_name) }}"
                                 >
+
+                                @error('first_name')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <div class="form-group pt-2">
@@ -65,12 +85,19 @@
                                 </label>
 
                                 <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        class="input-navily form-control"
-                                        value="{{ $user->email }}"
+                                    required
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="input-navily form-control @error('email') is-invalid @enderror"
+                                    value="{{ old('email', $user->email) }}"
                                 >
+
+                                @error('email')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <div class="form-group pt-2">
@@ -79,26 +106,38 @@
                                 </label>
 
                                 <input
-                                        type="text"
-                                        id="phone"
-                                        name="phone"
-                                        class="input-navily form-control"
-                                        value="{{ $user->phone }}"
+                                    type="text"
+                                    id="phone"
+                                    name="phone"
+                                    class="input-navily form-control @error('phone') is-invalid @enderror"
+                                    value="{{ old('phone', $user->phone) }}"
                                 >
+
+                                @error('phone')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <div class="form-group pt-2">
-                                <label for="birthdate" class="text-secondary-color">
+                                <label for="birth_date" class="text-secondary-color">
                                     Date de naissance
                                 </label>
 
                                 <input
-                                        type="date"
-                                        id="birthdate"
-                                        name="birthdate"
-                                        class="input-navily form-control"
-                                        value="{{ $user->bith_date }}"
+                                    type="date"
+                                    id="birth_date"
+                                    name="birth_date"
+                                    class="input-navily form-control @error('birth_date') is-invalid @enderror"
+                                    value="{{ old('birth_date', $user->birth_date) }}"
                                 >
+
+                                @error('birthdate')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <div class="form-group pt-2">
@@ -107,10 +146,16 @@
                                 </label>
 
                                 <textarea
-                                        id="description"
-                                        name="description"
-                                        class="input-navily form-control"
-                                >{{ $user->description }}</textarea>
+                                    id="description"
+                                    name="description"
+                                    class="input-navily form-control @error('description') is-invalid @enderror"
+                                >{{ old('description', $user->description) }}</textarea>
+
+                                @error('description')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <div class="text-center pt-4">

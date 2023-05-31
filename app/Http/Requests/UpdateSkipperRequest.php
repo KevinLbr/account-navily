@@ -22,7 +22,29 @@ class UpdateSkipperRequest extends FormRequest
 			'first_name' => [
 				'nullable',
 				'max:255'
-			]
+			],
+
+			'email' => [
+				'required',
+				'max:255',
+				'email'
+			],
+
+			'phone' => [
+				'phone:FR',
+				'nullable'
+			],
+
+			'description' => [
+				'nullable'
+			],
+
+			'birth_date' => [
+				'date',
+				'before:13 years ago'
+			],
+
+//			'image',
         ];
     }
 }
