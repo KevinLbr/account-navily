@@ -22,7 +22,7 @@ class UpdateSkipperTest extends DuskTestCase
 				->visit(route('account.skipper'))
 				->waitForLocation(route('account.skipper'))
 				->type('#first_name', 'UpdateSkipper')
-				->click('#dusk-save-btn')
+				->click('@save-btn')
 				->waitForLocation(route('account.skipper'))
 				->assertVisible('@success-alert');
 		});
@@ -37,7 +37,7 @@ class UpdateSkipperTest extends DuskTestCase
 				->visit(route('account.skipper'))
 				->waitForLocation(route('account.skipper'))
 				->type('#last_name', Str::random(300))
-				->click('#dusk-save-btn')
+				->click('@save-btn')
 				->waitForLocation(route('account.skipper'))
 				->assertVisible('#last_name.is-invalid')
 				->assertNotPresent('@success-alert');

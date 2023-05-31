@@ -161,7 +161,7 @@
                             </div>
 
                             <div class="text-center pt-4">
-                                <button type="submit" class="btn btn-plainsailing" id="dusk-save-btn">
+                                <button type="submit" class="btn btn-plainsailing" dusk="save-btn">
                                     Valider
                                 </button>
                             </div>
