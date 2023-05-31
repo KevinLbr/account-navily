@@ -10,7 +10,6 @@ use Illuminate\View\View;
 
 class AccountSkipperController extends Controller
 {
-
 	public function getSkipperAccountView(): View
 	{
 		return view('account.skipper')
