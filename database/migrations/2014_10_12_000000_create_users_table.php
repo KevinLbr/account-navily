@@ -37,7 +37,7 @@ return new class extends Migration
 			$table->unsignedInteger('points')
 				->default(0);
 
-            $table->text('image')
+            $table->longText('image')
 				->nullable();
 
             $table->rememberToken();

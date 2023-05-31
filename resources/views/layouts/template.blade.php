@@ -31,5 +31,7 @@
 
             <footer-component></footer-component>
         </div>
+
+        @stack('after_scripts')
     </body>
 </html>

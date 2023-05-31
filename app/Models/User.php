@@ -96,4 +96,11 @@ class User extends Authenticatable
 			? $this->image
 			: 'data:image/png;base64,' . base64_encode(file_get_contents(Storage::disk('public')->path('/images/users/default_image.png')));
 	}
+
+	public function setImageAttribute($value): void
+	{
+		$this->attributes['image'] = $value != null
+			? 'data:image/png;base64,' . base64_encode(file_get_contents($value))
+			: null;
+	}
 }

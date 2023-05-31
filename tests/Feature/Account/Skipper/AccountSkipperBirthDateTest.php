@@ -28,4 +28,6 @@ class AccountSkipperBirthDateTest extends TestCase
 		$user_refreshed = User::find($user->id);
 		$this->assertEquals($user_refreshed->birth_date, $new_birth_date);
 	}
+
+//	TODO add test with date after 100 years and before 13 years
 }

@@ -28,16 +28,18 @@
                     >
                 </div>
 
-                <div class="text-center pb-5 pt-4">
-                    <a class="text-main-light-color" style="cursor: pointer">
-                        Changer la photo de profil
-                    </a>
-                </div>
-
                 <div class="row">
                     <div class="col-12 col-sm-6 offset-sm-3">
-                        <form action="{{ route('account.skipper') }}" method="POST">
+                        <form action="{{ route('account.skipper') }}" method="POST" enctype='multipart/form-data'>
                             @csrf
+
+                            <div class="text-center pb-5 pt-4">
+                                <a class="text-main-light-color" style="cursor: pointer" id="fake-btn-image">
+                                    Changer la photo de profil
+                                </a>
+
+                                <input type="file" name="image" hidden id="image" accept="image/png, image/jpeg">
+                            </div>
 
                             <div class="form-group pt-2">
                                 <label for="last_name" class="text-secondary-color">
@@ -170,3 +172,16 @@
         </div>
     </div>
 @endsection
+
+@push('after_scripts')
+    <script>
+        window.addEventListener('load', (event) => {
+            var fake_btn_image = document.getElementById('fake-btn-image');
+
+            fake_btn_image.addEventListener("click", function()
+            {
+                document.getElementById("image").click();
+            });
+        });
+    </script>
+@endpush
