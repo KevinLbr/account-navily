@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Managers\SkipperManager;
 use App\Http\Requests\UpdateSkipperRequest;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class AccountController extends Controller
@@ -19,9 +21,9 @@ class AccountController extends Controller
 			->with('user', auth()->user());
 	}
 
-	public function updateSkipper(UpdateSkipperRequest $request)
+	public function updateSkipper(UpdateSkipperRequest $request): RedirectResponse
 	{
-		auth()->user()->update($request->all());
+		SkipperManager::update($request);
 
 		return redirect(route('account.skipper'));
 	}
