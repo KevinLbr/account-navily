@@ -3,10 +3,8 @@
 namespace Tests\Feature\Account\Skipper;
 
 use App\Models\User;
-//use GuzzleHttp\Psr7\UploadedFile;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\File;
 use Tests\TestCase;
 use Tests\Tools\UserTools;
 
