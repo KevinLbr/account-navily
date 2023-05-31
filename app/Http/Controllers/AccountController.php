@@ -8,7 +8,8 @@ class AccountController extends Controller
 {
     public function getInformationsAccountView(): View
 	{
-		return view('account.informations');
+		return view('account.informations')
+			->with('user', auth()->user());
 	}
 
 	public function getSkipperAccountView(): View

@@ -13,26 +13,26 @@
                 </h1>
                 
                 <div class="d-flex justify-content-center">
-                    <img src="{{ url('/images/user/kevin-linkedin.jpeg') }}"
+                    <img src="{{ $user->image }}"
                          alt="Kevin Labre"
                          class="rounded-full">
                 </div>
 
                 <div class="text-center pb-5">
                     <p class="text-main-deep-color pt-4 text-weight-700">
-                        Kevin Labre
+                        {{ $user->full_name }}
                     </p>
 
                     <p class="text-grey-medium">
-                        Profil completé à 17%
+                        Profil completé à {{ $user->progression }}%
                     </p>
 
                     <p class="text-main-deep-color pt-4 text-weight-700">
-                        Debutant
+                        {{ $user->level }}
                     </p>
 
                     <p class="text-main-light-color ">
-                        10 points
+                        {{ $user->points_display }}
                     </p>
                 </div>
 
