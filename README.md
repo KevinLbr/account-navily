@@ -2,10 +2,7 @@
 
 ## Composer install
 ```bash
-docker run --rm --interactive --tty \                                                                                                                                                                09:59:31
-  --volume $PWD:/app \
-  --volume ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
-  composer install
+docker run --rm --interactive --tty --volume $PWD:/app --volume ${COMPOSER_HOME:-$HOME/.composer}:/tmp composer install
 ```
 
 ## Copy env
@@ -26,5 +23,5 @@ sail npm run dev
 
 ## Migrate & seed
 ```bash
-sail art migrate -seed
+sail art migrate --seed
 ```
