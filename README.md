@@ -1,4 +1,6 @@
 # Projet de demo pour Navily
+Pendant la phase de recrutement, Navily ne m'a pas donner de test a faire, juste un echange technique. J'ai pris l'initiative de faire rapidement une fonctionnalité de sur leur site internet, la partie authentification.
+Afin de gagner du temps, j'ai copié collé leur css, etc, tout ce qui etait accessible publiquement
 
 ## Composer install
 ```bash
